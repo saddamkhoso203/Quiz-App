@@ -6,6 +6,6 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-<x-navbar name= {{ $name }}></x-navbar>
+<x-navbar :name={{ $name }}></x-navbar>
 </body>
 </html>
