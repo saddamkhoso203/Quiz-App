@@ -67,7 +67,9 @@ function logout(){
  
  function addCategory(Request $request){
 
-
+$validate = $request->validate([
+    'category' => 'required | min:5  | unique:categories,name' 
+]);
     $admin = Session::get('admin');
     $category = new Category();
     $category->name = $request->category;
@@ -79,6 +81,17 @@ function logout(){
     return redirect('admin-categories');
  }
 
+
+
+ function deleteCategory($id){
+  
+     $isDeleted = Category::where('id', $id)->delete();
+     if ($isDeleted) {
+        # code...
+        Session::flash('category', "Success: Category Deleted..");
+        return redirect('admin-categories');
+     }
+ }
 
 
 
