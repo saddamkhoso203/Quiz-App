@@ -48,9 +48,10 @@ return redirect('admin-login');
 }
 //funtion for categories
 function categories(){
+    $categories = Category::get();
        $admin = Session::get('admin');
     if ($admin) {
-           return view('categories',['name' => $admin->name]);
+           return view('categories',['name' => $admin->name, "categories" => $categories]);
         
     }else
  
@@ -65,6 +66,8 @@ function logout(){
  //function for add categories
  
  function addCategory(Request $request){
+
+
     $admin = Session::get('admin');
     $category = new Category();
     $category->name = $request->category;
