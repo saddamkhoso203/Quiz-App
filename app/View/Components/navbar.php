@@ -16,7 +16,7 @@ class navbar extends Component
     public function __construct($name = null)
     {
         //
-        $this->name = $name;
+        $this->name=$name;
     }
 
     /**
