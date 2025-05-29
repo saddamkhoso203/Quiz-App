@@ -18,3 +18,5 @@ Route::get('admin-categories', [App\Http\Controllers\AdminController::class, 'ca
 Route::get('admin-logout', [App\Http\Controllers\AdminController::class, 'logout']);
 Route::post('add-category', [App\Http\Controllers\AdminController::class, 'addCategory']);
 Route::get('category/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteCategory']);
+// Route::get('category/edit/{id}', [App\Http\Controllers\AdminController::class, 'editCategory']);
+Route::get('add-quiz', [App\Http\Controllers\AdminController::class, 'addQuiz']);
