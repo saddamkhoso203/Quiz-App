@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -36,12 +36,12 @@
           <li class="p-2 font-bold"> 
             <ul class="flex justify-between">
             <li class="w-30">S. No</li>
-             <li class="w-70">Name</li>
-             <li class="w-70">Creator</li>
+            <li class="w-70">Name</li>
+            <li class="w-70">Creator</li>
             <li class="w-30"> Action </li>
-              <li class="w-30"> Edit </li>
-        </ul>
-    </li>
+            <li class="w-30"> Edit </li>
+            </ul>
+          </li>
        @foreach ($categories as $category )
         <li class="even:bg-gray-200 p-2"> 
             <ul class="flex justify-between">

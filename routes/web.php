@@ -20,3 +20,4 @@ Route::post('add-category', [App\Http\Controllers\AdminController::class, 'addCa
 Route::get('category/delete/{id}', [App\Http\Controllers\AdminController::class, 'deleteCategory']);
 // Route::get('category/edit/{id}', [App\Http\Controllers\AdminController::class, 'editCategory']);
 Route::get('add-quiz', [App\Http\Controllers\AdminController::class, 'addQuiz']);
+Route::post('add-mcq', [App\Http\Controllers\AdminController::class, 'addMCQs']);

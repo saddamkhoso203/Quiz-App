@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Admin;
 use App\Models\Category;
 use App\Models\Quiz;
+use App\Models\Mcq;
 
 class AdminController extends Controller
 {
@@ -123,16 +124,30 @@ return redirect('admin-login');
 }
 
 
-// //function for Edit Category
-// function editCategory($id){
-//     $category = Category::where('id', $id)->first();
-//     $admin = Session::get('admin');
-//     if ($admin) {
-//            return view('edit-category',['name' => $admin->name, "category" => $category]);
-        
-//     }else
- 
-// return redirect('admin-login'); 
-// }
+//function for add mcq
+function addMCQs(Request $request){
 
+$mcq = new Mcq();
+$quiz = Session::get('quizDetails');
+$admin = Session::get('admin');
+$mcq->question = $request->question;
+$mcq->a = $request->a;
+$mcq->b = $request->b;
+$mcq->c = $request->c;
+$mcq->d = $request->d;
+$mcq->correct_ans = $request->correct_ans;
+$mcq->admin_id = $admin->id;
+$mcq->quiz_id = $quiz->id;
+$mcq->category_id = $quiz->category_id;
+$mcq->quiz_id = Session::get('quizDetails')->id;
+if($mcq->save()){
+    if($request->submit=="add-more"){
+        return redirect(url()->previous());
+}else {
+    # code...
+    Session::forget('quizDetails',);
+    return redirect('/admin-categories');
+}
+}
+}
 }

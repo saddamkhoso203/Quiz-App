@@ -36,52 +36,53 @@
      @else 
     <span class=" text-align-center font-bold text-green-500 "> Quiz : {{session('quizDetails')->name}}</span>
     <h1 class="text-2xl  mb-6 text-center text-gray-800 " >Add MCQs</h1>
-    <form class="space-y-4" action="" method="get">
+    <form class="space-y-4" action="add-mcq" method="post">
                  <div>
+                    @csrf
             
-            <textarea type="text" placeholder="Enter Your Question" name="quiz"
+            <textarea type="text" placeholder="Enter Your Question" name="question"
             class="w-full px-4 py-2 border border-gray-300 rounded-xl  focus:outline-none "></textarea>
 
 </div>
        <div>
             
-            <input type="text" placeholder="Enter First Option" name="quiz"
+            <input type="text" placeholder="Enter First Option" name="a"
             class="w-full px-4 py-2 border border-gray-300 rounded-xl  focus:outline-none ">
 
       </div>
         <div>
             
-            <input type="text" placeholder="Enter Second Option" name="quiz"
+            <input type="text" placeholder="Enter Second Option" name="b"
             class="w-full px-4 py-2 border border-gray-300 rounded-xl  focus:outline-none ">
 
       </div>
         <div>
             
-            <input type="text" placeholder="Enter Third Option" name="quiz"
+            <input type="text" placeholder="Enter Third Option" name="c"
             class="w-full px-4 py-2 border border-gray-300 rounded-xl  focus:outline-none ">
 
       </div>
         <div>
             
-            <input type="text" placeholder="Enter Fourth Option" name="quiz"
+            <input type="text" placeholder="Enter Fourth Option" name="d"
             class="w-full px-4 py-2 border border-gray-300 rounded-xl  focus:outline-none ">
 
       </div>
          <div>
             
-            <select  name="Right Answer"
+            <select  name="correct_ans"
             class="w-full px-4 py-2 border border-gray-300 rounded-xl  focus:outline-none ">
         
         <option value="">Select Right Answer</option>
-<option value="">A</option>
-<option value="">B</option>
-<option value="">C</option>
-<option value="">D</option>
+<option value="a">A</option>
+<option value="b">B</option>
+<option value="c">C</option>
+<option value="d">D</option>
         </select>
 
       </div>
-             <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white">Add More</button>
-                    <button type="submit" class="block w-full bg-green-600 mt-4 py-2 rounded-2xl text-white">Add and Submit</button>
+             <button type="submit" value="add-more" name="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white">Add More</button>
+                    <button type="submit" value="done" name="submit" class="block w-full bg-green-600 mt-4 py-2 rounded-2xl text-white">Add and Submit</button>
     </form>
      @endif 
 </div>
